@@ -1,9 +1,9 @@
 # cse3150-template
-`Homework/Lab Week: `
+`Lab Week: 2`
 
 `Name: Alistaire Noiprasit`
 
-<!-- INSERT CI PYTEST STATUS HERE -->
+[![Run Pytest](https://github.com/alistairenoiprasit/cse3150_week_2_lab/actions/workflows/pytest.yaml/badge.svg)](https://github.com/alistairenoiprasit/cse3150_week_2_lab/actions/workflows/pytest.yaml)
 
 I declare that:
 - this assessment item is my own work, except where acknowledged, and has not been submitted for
