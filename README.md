@@ -17,7 +17,7 @@ Misconduct.
 -->
 > [!IMPORTANT]
 > This work is NOT ready for submission as of `<insert date>`. <br>
-> The final due date is `<insert date>`.
+> The final due date is `Thur 11 Sep 2025`.
 
 SIGNED: ALISTAIRE NOIPRASIT
 
