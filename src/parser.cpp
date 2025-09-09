@@ -7,10 +7,6 @@
 #include <sstream>
 
 using namespace StringUtils;
-void StringUtils::stub() {
-    using namespace std;
-    cout << "I'm a stub FROM parseName" << endl;
-}
 
 void StringUtils::parseName(const std::string& fullName, std::string* firstName,
     std::string* lastName) {

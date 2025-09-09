@@ -11,7 +11,5 @@ namespace StringUtils {
     std::string* lastName);
 
     std::string getUsername(const std::string& email);
-
-    void stub();
 }
 #endif //PARSER_H
