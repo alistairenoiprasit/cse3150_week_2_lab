@@ -7,10 +7,21 @@
 #include <sstream>
 
 using namespace StringUtils;
+using std::string;
 
 void StringUtils::parseName(const std::string& fullName, std::string* firstName,
     std::string* lastName) {
-    std::stringstream(fullName) >> *firstName >> *lastName;
+
+    size_t first_space_index = fullName.find(" ");
+    size_t last_space_index = fullName.rfind(" ");
+
+    *firstName = fullName.substr(0, first_space_index);
+    if (last_space_index < fullName.length()) {
+        *lastName = fullName.substr(last_space_index + 1, fullName.size());
+    } else {
+        *lastName = ""; // undefined
+    }
+
 }
 
 std::string StringUtils::getUsername(const std::string& email) {
