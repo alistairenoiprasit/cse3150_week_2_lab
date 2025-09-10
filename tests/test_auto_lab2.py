@@ -69,7 +69,7 @@ def test_simple_name_and_email():
 
 def test_name_with_middle_initial():
     """Tests a name that includes a middle initial."""
-    name = "John Doe"
+    name = "John A. Doe"
     email = "john.doe@uconn.edu"
 
     parsed_info = run_parser(name, email)
@@ -77,3 +77,106 @@ def test_name_with_middle_initial():
     assert parsed_info.get("First Name") == "John"
     assert parsed_info.get("Last Name") == "Doe"
     assert parsed_info.get("Username") == "john.doe"
+'''
+MY TESTS
+'''
+def test_middlename():
+    """Tests a name that includes a middle name."""
+    name = "Alistaire Al Noiprasit"
+    email = "Alistaire.noiprasit@uconn.edu"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Alistaire"
+    assert parsed_info.get("Last Name") == "Noiprasit"
+    assert parsed_info.get("Username") == "Alistaire.noiprasit"
+def test_hyphen_last_name():
+    """Tests a name that including hyphens."""
+    name = "Aladdin Ali-Ababwa"
+    email = "aladdin.ali-ababwa@gmail.com"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Aladdin"
+    assert parsed_info.get("Last Name") == "Ali-Ababwa"
+    assert parsed_info.get("Username") == "aladdin.ali-ababwa"
+
+def test_hyphen_complex_name():
+    """Tests a complex name with hyphen and other symbols."""
+    name = "Al'addin Genie Ali-Ababwa"
+    email = "al'addin.ali-ababwa@gmail.com"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Al'addin"
+    assert parsed_info.get("Last Name") == "Ali-Ababwa"
+    assert parsed_info.get("Username") == "al'addin.ali-ababwa"
+
+def test_spaces():
+    """Tests lots of spaces everywhere."""
+    name = "Jafa  aaaaa  aaa  r"
+    email = "princeali@gmail.com"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Jafa"
+    assert parsed_info.get("Last Name") == "r"
+    assert parsed_info.get("Username") == "princeali"
+
+def test_non_ascii():
+    """Tests with complex characters."""
+    name = "Jāfār Dżīn"
+    email = "Ṣīnāb+tag-me@gmail.com"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Jāfār"
+    assert parsed_info.get("Last Name") == "Dżīn"
+    assert parsed_info.get("Username") == "Ṣīnāb+tag-me"
+def test_nodomain():
+    """Tests with no email domain and one word username."""
+    name = "adam jacobs"
+    email = "ali@"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "adam"
+    assert parsed_info.get("Last Name") == "jacobs"
+    assert parsed_info.get("Username") == "ali"
+
+def test_long_name():
+    """Tests with long name."""
+    name = "Aladdin Prince Ali Lover of Jasmine Ababwa"
+    email = "aladdin@gmail.com"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Aladdin"
+    assert parsed_info.get("Last Name") == "Ababwa"
+    assert parsed_info.get("Username") == "aladdin"
+
+'''
+def test_single_name():
+    """Tests a single name."""
+    name = "Jafar"
+    email = "jafar@gmail.com"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "Jafar"
+    assert parsed_info.get("Last Name") == ""
+    assert parsed_info.get("Username") == "jafar"
+'''
+
+'''
+def test_template():
+    """Tests a name that includes a middle initial."""
+    name = "A A"
+    email = "A"
+
+    parsed_info = run_parser(name, email)
+
+    assert parsed_info.get("First Name") == "A"
+    assert parsed_info.get("Last Name") == "A"
+    assert parsed_info.get("Username") == "A"
+'''
