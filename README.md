@@ -1,4 +1,4 @@
-# cse3150 lab 2
+# cse3150 lab 02
 `Lab Week: 2`
 
 `Name: Alistaire Noiprasit`
@@ -16,7 +16,7 @@ Misconduct.
 > This work is NOT ready for submission as of `Day XX MONTH 2025`. <br>
 -->
 > [!IMPORTANT]
-> This work is NOT ready for submission as of `Wed 10 Sep`. <br>
+> This work is ready for submission as of `Wed 10 Sep`. <br>
 > The final due date is `Thur 11 Sep 2025`.
 
 SIGNED: ALISTAIRE NOIPRASIT
