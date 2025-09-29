@@ -1,7 +1,7 @@
 //
 // Created by Alistaire Noiprasit on 8/9/2025.
 //
-#include "../include/parser.h"
+#include "parser.h"
 #include <iostream>
 #include <string>
 
@@ -30,7 +30,8 @@ int main(void) {
     cout << "Last Name: " << *lastName << endl;
     cout << "Username: " << StringUtils::getUsername(email) << endl;
 
-    free(firstName);
-    free(lastName);
+    delete firstName;
+    delete lastName;
+
     return 0;
 }
